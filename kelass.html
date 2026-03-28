@@ -1,0 +1,537 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Gooner Comp | Jasa Service Komputer Profesional</title>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', sans-serif;
+            background-color: #f4f7fc;
+            color: #1e2a3e;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        .container {
+            max-width: 1280px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* header / navbar */
+        .navbar {
+            background: #0b2b3b;
+            color: white;
+            padding: 16px 0;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 6px 14px rgba(0,0,0,0.08);
+        }
+
+        .nav-flex {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+        }
+        .logo span {
+            color: #2dd4bf;
+        }
+
+        .nav-links {
+            display: flex;
+            gap: 28px;
+            list-style: none;
+        }
+        .nav-links a {
+            color: #e2e8f0;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 1rem;
+        }
+        .nav-links a:hover {
+            color: #2dd4bf;
+        }
+
+        /* hero section */
+        .hero {
+            background: linear-gradient(135deg, #0f2c39 0%, #1b4a5f 100%);
+            color: white;
+            padding: 60px 0 70px;
+        }
+        .hero-grid {
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+            gap: 40px;
+        }
+        .hero-text {
+            flex: 1;
+        }
+        .hero-text h2 {
+            font-size: 2.8rem;
+            font-weight: 800;
+            line-height: 1.2;
+            margin-bottom: 20px;
+        }
+        .hero-text p {
+            font-size: 1.2rem;
+            opacity: 0.9;
+            margin-bottom: 30px;
+            max-width: 500px;
+        }
+        .btn-primary {
+            background: #2dd4bf;
+            color: #0a2c36;
+            padding: 12px 32px;
+            border-radius: 40px;
+            font-weight: 700;
+            text-decoration: none;
+            display: inline-block;
+            transition: 0.2s;
+            box-shadow: 0 4px 8px rgba(0,0,0,0.1);
+        }
+        .btn-primary:hover {
+            background: #14b8a6;
+            transform: translateY(-2px);
+        }
+        .hero-image {
+            flex: 1;
+            text-align: center;
+        }
+        .hero-image img {
+            max-width: 100%;
+            border-radius: 28px;
+            box-shadow: 0 20px 30px -10px rgba(0,0,0,0.3);
+            width: 100%;
+            max-width: 420px;
+            object-fit: cover;
+        }
+
+        /* layanan section */
+        .section {
+            padding: 70px 0;
+        }
+        .section-title {
+            text-align: center;
+            font-size: 2.2rem;
+            font-weight: 700;
+            margin-bottom: 50px;
+            position: relative;
+        }
+        .section-title:after {
+            content: '';
+            display: block;
+            width: 70px;
+            height: 4px;
+            background: #2dd4bf;
+            margin: 12px auto 0;
+            border-radius: 4px;
+        }
+        .services-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+            gap: 32px;
+        }
+        .service-card {
+            background: white;
+            border-radius: 28px;
+            padding: 32px 20px;
+            text-align: center;
+            transition: all 0.25s ease;
+            box-shadow: 0 10px 20px rgba(0,0,0,0.03);
+            border: 1px solid #e2edf2;
+        }
+        .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: 0 20px 30px -12px rgba(0,0,0,0.12);
+            border-color: #cbdde6;
+        }
+        .service-icon {
+            font-size: 3.2rem;
+            color: #1f6e7c;
+            margin-bottom: 20px;
+        }
+        .service-card h3 {
+            font-size: 1.5rem;
+            margin-bottom: 12px;
+            font-weight: 700;
+        }
+        .service-card p {
+            color: #2c4b5c;
+            font-size: 0.95rem;
+        }
+
+        /* gallery gambar ilustrasi modern */
+        .gallery {
+            background: #eef3f7;
+        }
+        .gallery-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 28px;
+        }
+        .gallery-item {
+            background: white;
+            border-radius: 24px;
+            overflow: hidden;
+            box-shadow: 0 12px 24px rgba(0,0,0,0.08);
+            transition: 0.3s ease;
+        }
+        .gallery-item:hover {
+            transform: translateY(-6px);
+            box-shadow: 0 20px 30px -8px rgba(0,0,0,0.15);
+        }
+        .gallery-item img {
+            width: 100%;
+            height: 240px;
+            object-fit: cover;
+            display: block;
+            transition: transform 0.5s ease;
+        }
+        .gallery-item:hover img {
+            transform: scale(1.02);
+        }
+        .gallery-caption {
+            padding: 16px;
+            text-align: center;
+            font-weight: 700;
+            background: white;
+            color: #1e3a44;
+            font-size: 1rem;
+            border-top: 1px solid #e2edf2;
+        }
+
+        /* info & kontak - versi CENTERED (Hubungi Kami dan Jam Operasional di tengah) */
+        .contact-info {
+            background: white;
+        }
+        .info-wrapper {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 40px;
+            justify-content: center;
+            align-items: stretch;
+        }
+        /* Alamat tetap di kiri, tapi Hubungi Kami dan Jam Operasional di tengah secara visual */
+        .address-box {
+            background: #f9fbfd;
+            padding: 28px 24px;
+            border-radius: 32px;
+            flex: 1;
+            min-width: 260px;
+            box-shadow: 0 5px 12px rgba(0,0,0,0.02);
+            border: 1px solid #deecf2;
+            text-align: center;
+            transition: 0.2s;
+        }
+        /* Dua kartu utama (Hubungi Kami & Jam Operasional) akan lebih dominan center */
+        .center-card {
+            background: #f9fbfd;
+            padding: 28px 24px;
+            border-radius: 32px;
+            flex: 1;
+            min-width: 260px;
+            box-shadow: 0 8px 18px rgba(0,0,0,0.05);
+            border: 1px solid #deecf2;
+            text-align: center;
+            transition: 0.2s;
+        }
+        .info-icon {
+            font-size: 2.5rem;
+            color: #2c8b9e;
+            margin-bottom: 16px;
+        }
+        .address-box h3, .center-card h3 {
+            font-size: 1.4rem;
+            margin-bottom: 14px;
+            font-weight: 700;
+        }
+        .address-box p, .center-card p {
+            font-size: 1.05rem;
+            line-height: 1.5;
+            color: #2c4b5c;
+        }
+        .phone-number {
+            font-size: 1.6rem;
+            font-weight: 700;
+            color: #0f4c5f;
+            letter-spacing: -0.3px;
+        }
+        .btn-wa {
+            background: #25D366;
+            color: white;
+            border: none;
+            padding: 10px 20px;
+            border-radius: 40px;
+            font-weight: 600;
+            margin-top: 15px;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            text-decoration: none;
+            transition: 0.2s;
+        }
+        .btn-wa:hover {
+            background: #128C7E;
+            transform: scale(1.02);
+        }
+        /* jam operasional highlight */
+        .jam-highlight {
+            background: #e7f3f8;
+            border-left: 4px solid #2dd4bf;
+        }
+
+        /* responsive untuk memastikan ketiga item center secara proporsional */
+        @media (max-width: 900px) {
+            .info-wrapper {
+                flex-direction: column;
+                align-items: center;
+            }
+            .address-box, .center-card {
+                width: 100%;
+                max-width: 480px;
+            }
+        }
+
+        /* footer */
+        footer {
+            background: #08212b;
+            color: #b9d8e8;
+            padding: 28px 0;
+            text-align: center;
+            font-size: 0.9rem;
+        }
+
+        @media (max-width: 800px) {
+            .nav-flex {
+                flex-direction: column;
+                gap: 12px;
+            }
+            .hero-text h2 {
+                font-size: 2rem;
+            }
+            .hero-grid {
+                flex-direction: column;
+                text-align: center;
+            }
+            .hero-text p {
+                margin-left: auto;
+                margin-right: auto;
+            }
+        }
+    </style>
+</head>
+<body>
+
+<header class="navbar">
+    <div class="container nav-flex">
+        <div class="logo">
+            <h1>Gooner <span>Comp</span></h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="#home">Beranda</a></li>
+            <li><a href="#layanan">Layanan</a></li>
+            <li><a href="#gallery">Galeri</a></li>
+            <li><a href="#kontak">Kontak</a></li>
+        </ul>
+    </div>
+</header>
+
+<main>
+    <!-- Hero section -->
+    <section id="home" class="hero">
+        <div class="container hero-grid">
+            <div class="hero-text">
+                <h2>Service Komputer <br> Cepat & Profesional</h2>
+                <p>Solusi terbaik untuk laptop, PC, dan gaming rig. Dari instal ulang hingga perawatan berkala dengan teknisi berpengalaman.</p>
+                <a href="#kontak" class="btn-primary"><i class="fas fa-phone-alt"></i> Hubungi Kami</a>
+            </div>
+            <div class="hero-image">
+                <img src="https://cdn.phototourl.com/free/2026-03-28-5c19d882-cf97-4a84-af6a-1ab3ef5fecfe.jpg" alt="Teknisi service komputer ilustrasi" style="background: rgba(255,255,255,0.1); padding: 20px; border-radius: 28px;">
+            </div>
+        </div>
+    </section>
+
+    <!-- Layanan / Jasa -->
+    <section id="layanan" class="section">
+        <div class="container">
+            <h2 class="section-title">Layanan Unggulan</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-window-restore"></i></div>
+                    <h3>Install Ulang OS</h3>
+                    <p>Windows 10/11, Linux, dual boot. Bersih, optimal, dan driver terbaru.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-broom"></i></div>
+                    <h3>Pembersihan Total</h3>
+                    <p>Bersihkan debu dari komponen internal, kipas, dan heatsink. Mencegah overheat.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-microchip"></i></div>
+                    <h3>Ganti Thermal Paste</h3>
+                    <p>Pasta thermal premium, turunkan suhu CPU/GPU, performa lebih stabil.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-tachometer-alt"></i></div>
+                    <h3>Perawatan Rutin</h3>
+                    <p>Diagnosa, tune-up, optimasi SSD/HDD, dan pengecekan hardware menyeluruh.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-database"></i></div>
+                    <h3>Backup & Recovery</h3>
+                    <p>Penyelamatan data penting, migrasi data, dan backup sistem aman.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-plug"></i></div>
+                    <h3>Perbaikan Hardware</h3>
+                    <p>Ganti keyboard, layar LCD, jack charger, dan komponen lainnya.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Galeri Gambar ILUSTRASI MODERN (semua gambar ilustrasi berkualitas tinggi) -->
+    <section id="gallery" class="section gallery">
+        <div class="container">
+            <h2 class="section-title">Ilustrasi Pengerjaan</h2>
+            <div class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://cdn.phototourl.com/free/2026-03-28-b4d2badb-ee30-416d-924a-38ffe1e3bbf8.png" 
+                         alt="Ilustrasi install ulang windows 11 profesional"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/888/888879.png'">
+                    <div class="gallery-caption"><i class="fab fa-windows"></i> Install Ulang Sistem Operasi</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.phototourl.com/free/2026-03-28-8b658d62-5a4f-4cba-9acf-6569f2e85169.png"
+                         alt="Ilustrasi pembersihan laptop dan kipas"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/2933/2933249.png'">
+                    <div class="gallery-caption"><i class="fas fa-broom"></i> Pembersihan Laptop & Fan Deep Cleaning</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.phototourl.com/free/2026-03-28-245f3607-d7bb-4302-8765-5c9d8bad86dd.png"
+                         alt="Ilustrasi ganti thermal paste CPU"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/2838/2838912.png'">
+                    <div class="gallery-caption"><i class="fas fa-temperature-high"></i> Ganti Thermal Paste Premium</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.phototourl.com/free/2026-03-28-7faf65bb-a774-468d-8141-f7ac590a33b2.png"
+                         alt="Ilustrasi perawatan PC dan komputer"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/1864/1864514.png'">
+                    <div class="gallery-caption"><i class="fas fa-desktop"></i> Perawatan PC & Gaming Rig</div>
+                </div>
+            </div>
+            <!-- baris kedua galeri -->
+            <div style="margin-top: 32px;" class="gallery-grid">
+                <div class="gallery-item">
+                    <img src="https://cdn.phototourl.com/free/2026-03-28-84ab5fbf-6823-44b6-8d47-2de58811b98f.png"
+                         alt="Ilustrasi perbaikan hardware komputer"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/3665/3665927.png'">
+                    <div class="gallery-caption"><i class="fas fa-microchip"></i> Diagnosa & Ganti Komponen</div>
+                </div>
+                <div class="gallery-item">
+                    <img src="https://cdn.phototourl.com/free/2026-03-28-2c4af8d9-2e08-40f4-a4cf-041343858490.png"
+                         alt="Ilustrasi backup data dan recovery"
+                         onerror="this.src='https://cdn-icons-png.flaticon.com/512/2989/2989985.png'">
+                    <div class="gallery-caption"><i class="fas fa-database"></i> Backup & Recovery Data Aman</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Alamat, Telepon, dan Informasi - dengan Hubungi Kami & Jam Operasional di tengah (center alignment) -->
+    <section id="kontak" class="section contact-info">
+        <div class="container">
+            <h2 class="section-title">Informasi & Kontak</h2>
+            <div class="info-wrapper">
+                <!-- Alamat (kiri) -->
+                <div class="address-box">
+                    <div class="info-icon"><i class="fas fa-map-marker-alt"></i></div>
+                    <h3>Alamat Kantor</h3>
+                    <p>Tanjung Duren Jakarta Barat</p>
+                    <p><i class="fas fa-building"></i> Ruko Tanjung Duren</p>
+                    <p><i class="fas fa-car"></i> Tersedia antar-jemput area Jakarta Barat</p>
+                </div>
+
+                <!-- Hubungi Kami - DITENGAHKAN (center card) -->
+                <div class="center-card">
+                    <div class="info-icon"><i class="fas fa-phone-alt"></i></div>
+                    <h3>Hubungi Kami</h3>
+                    <p class="phone-number">+62 821-1454-5616</p>
+                    <p><i class="fab fa-whatsapp"></i> WhatsApp: +62 821-1454-5616</p>
+                    <a href="https://wa.me/6282114545616?text=Halo%20Gooner%20Comp%2C%20saya%20mau%20konsultasi%20service%20komputer" target="_blank" class="btn-wa"><i class="fab fa-whatsapp"></i> Chat WhatsApp Sekarang</a>
+                </div>
+
+                <!-- Jam Operasional - DITENGAHKAN juga, sehingga tampil center bersama Hubungi Kami -->
+                <div class="center-card jam-highlight">
+                    <div class="info-icon"><i class="far fa-clock"></i></div>
+                    <h3>Jam Operasional</h3>
+                    <p><strong>Senin - Minggu :</strong> 09:00 - 19:00</p>
+                    <p><strong>Hari Besar :</strong> Tutup (kecuali darurat)</p>
+                    <p><i class="fas fa-tools"></i> Konsultasi gratis via telepon/WA</p>
+                    <p><i class="fas fa-check-circle"></i> Layanan antar jemput tersedia jika dekat</p>
+                </div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        <p>&copy; 2026 Gooner Comp- Service Komputer Profesional. Bergaransi & Teknisi Tersertifikasi.</p>
+        <p style="margin-top: 8px;"><i class="fas fa-check-circle"></i> Hasil rapih, harga transparan, dan kepuasan pelanggan prioritas</p>
+    </div>
+</footer>
+
+<script>
+    // Smooth scroll for anchor links
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                e.preventDefault();
+                target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+    
+    // fallback image handling untuk semua gambar galeri & hero
+    document.querySelectorAll('.gallery-item img, .hero-image img').forEach(img => {
+        img.addEventListener('error', function() {
+            if (this.closest('.hero-image')) {
+                this.src = 'https://cdn-icons-png.flaticon.com/512/2933/2933245.png';
+                this.style.background = '#1e6f7c';
+                this.style.padding = '20px';
+            } else {
+                // fallback umum untuk galeri
+                if (!this.src.includes('flaticon')) {
+                    this.src = 'https://cdn-icons-png.flaticon.com/512/3665/3665927.png';
+                    this.style.objectFit = 'contain';
+                    this.style.backgroundColor = '#f1f9ff';
+                    this.style.padding = '30px';
+                }
+            }
+        });
+    });
+</script>
+</body>
+</html>
